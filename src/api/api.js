@@ -1,19 +1,24 @@
-class Request {
-    host = 'https://pokeapi.co';
+import axios from "axios"
 
-    getPokemonChunk = async (limit = 12, offset = 0) => {
-        return await fetch(`${this.host}/api/v2/pokemon/?limit=${limit}&offset=${offset}`).then(res => {
-            return res.json().then(data => data.results);
-        });
-    }
 
-    getPokemonInfo = async (id = 2) => {
-        return await fetch(`${this.host}/api/v2/pokemon/${id}`).then(res => console.log(res))
-    }
+const instance = axios.create({
+    baseURL: 'https://pokeapi.co/'
+})
 
-    getAllTypes = async () => {
-        return await fetch(`${this.host}/api/v2/type?limit=999`).then(res => console.log(res.json()))
-    }
+export const pokemonsAPI = {
+    getPokemonChunk(limit = 12, offset = 0) {
+        return instance.get(`api/v2/pokemon/?limit=${limit}&offset=${offset}`).then(res => res.data.results)
+    },
+
+    getPokemonInfo(url) {
+        return instance.get(`${url}`).then(res => res.data)
+    },
+
+    getPokemonInfoById(id) {
+        return instance.get(`api/v2/pokemon/${id}`).then(res => res.data)
+    },
+
+    getAllTypes() {
+        return instance.get(`api/v2/type?limit=999`).then(res => console.log(res))
+    },
 }
-
-export const request = new Request()

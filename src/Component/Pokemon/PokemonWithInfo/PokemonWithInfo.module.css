@@ -1,0 +1,31 @@
+.PokemonWithInfo {
+    border: 2px solid black;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header p {
+    margin: 0 4px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+table, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}

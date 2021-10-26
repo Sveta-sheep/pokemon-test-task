@@ -1,8 +1,7 @@
 import { Provider } from 'react-redux';
 import { request } from './api/api';
 import './App.css';
-import { Pokedex } from './Component/Pokedex';
-import store from './redux/store';
+import { Pokedex } from './Component/Pokedex/Pokedex'; import store from './redux/store';
 
 const App = () => {
   return (

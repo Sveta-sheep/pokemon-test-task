@@ -1,0 +1,22 @@
+.pokemonCard {
+    border: 2px solid black;
+    display: grid;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    justify-items: center;
+    padding: 16px;
+}
+
+.typesWrapper {
+    display: flex;
+    margin: 4px;
+    column-gap: 4px;
+}
+
+.pokemonType {
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+.pokemonName {
+    font-weight: 600;
+}
