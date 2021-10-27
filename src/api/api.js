@@ -1,6 +1,5 @@
 import axios from "axios"
 
-
 const instance = axios.create({
     baseURL: 'https://pokeapi.co/'
 })
@@ -16,9 +15,5 @@ export const pokemonsAPI = {
 
     getPokemonInfoById(id) {
         return instance.get(`api/v2/pokemon/${id}`).then(res => res.data)
-    },
-
-    getAllTypes() {
-        return instance.get(`api/v2/type?limit=999`).then(res => console.log(res))
-    },
+    }
 }

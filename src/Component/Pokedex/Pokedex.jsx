@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getPokemonInfoById, getPokemons } from "../../redux/pokemons"
+import { getPokemons } from "../../redux/pokemons"
 import Pokemon from "../Pokemon/Pokemon"
 import PokemonWithInfo from "../Pokemon/PokemonWithInfo/PokemonWithInfo";
 import s from './Pokedex.module.css';

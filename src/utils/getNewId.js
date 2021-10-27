@@ -1,14 +1,10 @@
 export const getNewId = (id) => {
-    let newId = '#'
-
-    if (id.toString().length === 1) {
-        newId += `00${id}`
-    } else if (id.toString().length === 2) {
-        newId += `0${id}`
-    } else if (id.toString().length === 3) {
-        newId += `${id}`
-    } else {
-        newId += id
+    switch (id.toString().length) {
+        case 1:
+            return `#00${id}`
+        case 2:
+            return `#0${id}`
+        default:
+            return `#${id}`
     }
-    return newId;
 }

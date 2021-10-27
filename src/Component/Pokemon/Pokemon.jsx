@@ -1,19 +1,20 @@
-import React, { Fragment, useCallback, useEffect, useMemo } from 'react'
+import React, { useCallback, useEffect, useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { getPokemonInfo } from '../../redux/pokemons';
-import { setFirstLetterToUpperCase } from '../../utils/setFirstLetterToUpperCase';
+import { getWordWithFirstCapitalLetter } from '../../utils/getWordWithFirstCapitalLetter';
+import Preloader from '../Preloader/Preloader';
 import s from './Pokemon.module.css';
 
 const pokemonTypeColors = {
     grass: '#90EE90',
     poison: '#7B68EE',
-    fire: '#B22222',
+    fire: 'rgb(254 80 80)',
     electric: '#FFFF00',
     water: '#4682B4',
     ground: '#A0522D',
     flying: '#87CEEB',
     normal: '#C0C0C0',
-    fairy: '#E9967Age',
+    fairy: '#E9967A',
     bug: '#DAA520',
     fighting: '#FFB6C1'
 }
@@ -27,8 +28,8 @@ const Pokemon = ({ pokemon, onPokemonClick }) => {
 
     const pokemonTypes = useMemo(() => {
         return pokemon?.types?.map(t => {
-            return <div className={s.pokemonType} style={{ backgroundColor: pokemonTypeColors[t.type.name] }}>
-                {setFirstLetterToUpperCase(t.type.name)}
+            return <div key={t.id} className={s.pokemonType} style={{ backgroundColor: pokemonTypeColors[t.type.name] }}>
+                {getWordWithFirstCapitalLetter(t.type.name)}
             </div>
         }) 
     }, [pokemon?.types]);
@@ -44,14 +45,14 @@ const Pokemon = ({ pokemon, onPokemonClick }) => {
                     <>
                         <img src={pokemon.sprites.front_default} alt='pokemon image' />
                         <div className={s.pokemonName}>
-                            {setFirstLetterToUpperCase(pokemon.name)}
+                            {getWordWithFirstCapitalLetter(pokemon.name)}
                         </div>
                         <div className={s.typesWrapper}>
                             {pokemonTypes}
                         </div>
                     </>
                     :
-                    "LOADING..."
+                    <Preloader />
             }
         </div>
     )

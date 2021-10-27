@@ -47,9 +47,10 @@ button {
 
 .pokemonsCardsWrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 43vw 17vw;
     justify-items: center;
     align-items: center;
+    column-gap: 64px;
     margin-top: 24px;
 }
 

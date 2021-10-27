@@ -4,13 +4,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     align-items: space-between;
 }
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+}
+
+.avatar {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatarImg {
+    width: 100%;
 }
 
 .header p {
@@ -18,11 +31,25 @@
     font-weight: 600;
     font-size: 24px;
 }
+    
+table {
+    margin-top: 12px;
+}
 
-table, td {
+table,
+td {
     border: 1px solid black;
     text-align: center;
     padding: 4px;
+}
+
+.tdTitle {
+    width: 60%;
+}
+
+.tdData {
+    width: 40%;
+
 }
 
 table {
